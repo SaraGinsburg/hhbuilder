@@ -86,7 +86,6 @@
       split[1] = typeof split[1] === 'string' ? split[1].replace(/['"]+/g, '') : split[1];   // ""string"" to "string"
       personObj[split[0]] = split[1];
     }
-
     people.forEach(function(p, index){
       //keys will be in the same order, thus can compare this way
       if (JSON.stringify(personObj) === JSON.stringify(p)) {
@@ -98,8 +97,7 @@
   }
 
   // **** Event Listeners ****
-  // DOM load Event - this gets fired when the HTML document has been compoeteoy
-  // loaded and parsed.
+  // DOM load Event - gets fired when the HTML document has been completely loaded and parsed.
   document.addEventListener('DOMContentLoaded', Store.displayPeople);
 
   // Event Listener for adding a person
@@ -128,7 +126,6 @@
 
     // Clear Fields
     ui.clearFields();
-
     e.preventDefault();
    });
 
@@ -153,5 +150,5 @@
      debug.style.display = "block"
      debug.textContent = JSON.stringify(Store.getPeople())
 
-     e.preventDefault();   
+     e.preventDefault();
    })
